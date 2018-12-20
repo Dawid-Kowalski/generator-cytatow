@@ -1,4 +1,5 @@
 const quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
+const tweetLink = "https://twitter.com/intent/tweet?text=";
 
 function getQuote() {
 	fetch(quoteUrl, { cache: "no-store" })
@@ -24,8 +25,16 @@ function createTweet(input) {
 
     let tweetText = "Cytat dnia - " + quoteText + " Autor: " + quoteAuthor;
 
-    console.log(quoteText);
-    console.log(quoteAuthor);
-    console.log(tweetText);
+    if(tweetText.length > 140) {
+    	getQuote();
+    } else {
+    	let tweet = tweetLink + encodeURIComponent(tweetText);
+    	document.getElementById("quote-text").innerText = quoteText;
+   		document.getElementById("quote-author").innerText = "Autor: " + quoteAuthor;
+    	document.getElementById("tweet").setAttribute("href", tweet);
+    }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    getQuote();
+});
