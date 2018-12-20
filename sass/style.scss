@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+
+//for body//
+
+body {
+	background-color: #1E90FF;
+	color: white;
+	font-family: "Marck Script", cursive;
+	text-align: center;
+}
+
+//for results//
+
+.text {
+	margin-top: 20vh;
+}
+
+.author {
+	margin-bottom: 20vh;
+}
+
+//for buttons//
+
+.link {
+	border: 1px solid white;
+	color: white;
+	display: block;
+	height: 40px;
+	left: 50%;
+	margin: 50px 0;
+	position: relative;
+	text-decoration: none;
+	transform:translateX(-100px);
+	width: 200px;
+}
+
+.link-text {
+	height: 20px;
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	transform:translate(-50px,-10px);
+	top: 50%;
+	width: 100px;
+}
